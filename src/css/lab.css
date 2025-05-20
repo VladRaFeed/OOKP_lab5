@@ -1,0 +1,90 @@
+.labSection {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    background-color: #f4f4f4;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.mainForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.formWrapper {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.formLabel {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #444;
+}   
+
+.formSelect {
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+}
+
+.formSelect:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+.speakBtn {
+    align-self: flex-start;
+    padding: 8px 16px;
+    background-color: #00b894;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.speakBtn:hover {
+    background-color: #019875;
+}
+
+.solveBtn {
+    padding: 12px 20px;
+  background-color: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.SolveBtn:hover {
+    background-color: #0866c2;
+}
+
+.resultWrapper {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #dfe6e9;
+    border-left: 5px solid #0984e3;
+    border-radius: 8px;
+    font-size: 1.1em;
+    color: #2d3436;
+}

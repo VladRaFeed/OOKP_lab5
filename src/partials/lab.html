@@ -1,33 +1,48 @@
-<section>
-    <h2>Логічна задача: Лицар, Брехун і Звичайна людина</h2>
+<section class="labSection">
+    <h2 class="title">Логічна задача: Лицар, Брехун і Звичайна людина</h2>
 
-    <form>
-        <label for="a">Що сказав A:</label>
-        <select name="select_a" id="a">
-            <option value="я звичайна" selected>Я звичайна людина</option>
-            <option value="я на є звичайною">Я не є звичайною людиною</option>
-            <option value="це правда">Це правда</option>
-        </select>
-        <label for="b">Що сказав B:</label>
-        <select name="select_b" id="b">
-            <option value="я звичайна">Я звичайна людина</option>
-            <option value="я на є звичайною">Я не є звичайною людиною</option>
-            <option value="це правда" selected>Це правда</option>
-        </select>
-        <label for="c">Що сказав C:</label>
-        <select name="select_c" id="c">
-            <option value="я звичайна" selected>Я звичайна людина</option>
-            <option value="я на є звичайною">Я не є звичайною людиною</option>
-            <option value="це правда">Це правда</option>
-        </select>
+    <form class="mainForm">
+        <div class="formWrapper">
+            <div>
+                <label for="a" class="formLabel">Що сказав A:</label>
+                <select name="select_a" id="a" class="formSelect">
+                    <option value="я звичайна" class="formOption" selected>Я звичайна людина</option>
+                    <option value="я на є звичайною" class="formOption">Я не є звичайною людиною</option>
+                    <option value="це правда" class="formOption">Це правда</option>
+                </select>
+            </div>
+            <button id="speakA" class="speakBtn">Speak A</button>
+        </div>
+        <div class="formWrapper">
+            <div>
+                <label for="b" class="formLabel">Що сказав B:</label>
+                <select name="select_b" id="b" class="formSelect">
+                    <option value="я звичайна" class="formOption">Я звичайна людина</option>
+                    <option value="я на є звичайною" class="formOption">Я не є звичайною людиною</option>
+                    <option value="це правда" selected class="formOption">Це правда</option>
+                </select>
+            </div>
+            <button id="speakB" class="speakBtn">Speak B</button>
+        </div>
+        <div class="formWrapper">    
+            <div>
+                <label for="c" class="formLabel">Що сказав C:</label>
+                <select name="select_c" id="c" class="formSelect">
+                    <option value="я звичайна" class="formOption" selected>Я звичайна людина</option>
+                    <option value="я на є звичайною" class="formOption">Я не є звичайною людиною</option>
+                    <option value="це правда" class="formOption">Це правда</option>
+                </select>
+            </div>
+            <button id="speakC" class="speakBtn">Speak C</button>
+        </div>
 
-        <button id="solveBtn" type="button">Обчислити</button>
+        <button id="solveBtn" type="button" class="solveBtn">Обчислити</button>
     </form>
 
-    <div id="result"></div>
+    <div id="result" class="resultWrapper"></div>
 
-    <div>
+    <!-- <div>
         <button id="speak">Tap to speak</button>
         <p id="textarea"></p>
-    </div>
+    </div> -->
 </section>

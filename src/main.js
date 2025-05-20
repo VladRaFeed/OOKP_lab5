@@ -118,16 +118,17 @@ document.getElementById('solveBtn').addEventListener('click', () => {
 
 // Тест для голосового
 
-const speak = document.getElementById('speak');
-const textArea = document.getElementById('textarea');
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-const recognition = new SpeechRecognition();
-speak.addEventListener('click', () => {
-  recognition.start();
-  textArea.innerHTML = 'Speak...';
-});
-recognition.onresult = function(e) {
-  console.log(e);
-  const result = e.results[0][0].transcript;
-  textArea.innerHTML = result;
-}
+// const speak = document.getElementById('speak');
+// const textArea = document.getElementById('textarea');
+// const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+// const recognition = new SpeechRecognition();
+// speak.addEventListener('click', () => {
+//   recognition.start();
+//   textArea.innerHTML = 'Speak...';
+// });
+
+// recognition.onresult = function(e) {
+//   console.log(e);
+//   const result = e.results[0][0].transcript;
+//   textArea.innerHTML = result;
+// }
