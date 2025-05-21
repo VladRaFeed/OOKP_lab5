@@ -116,19 +116,47 @@ document.getElementById('solveBtn').addEventListener('click', () => {
   document.getElementById('result').innerText = result;
 });
 
-// Тест для голосового
+// ======= Голосовий ввід для кожного учасника =======
+const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 
-// const speak = document.getElementById('speak');
-// const textArea = document.getElementById('textarea');
-// const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-// const recognition = new SpeechRecognition();
-// speak.addEventListener('click', () => {
-//   recognition.start();
-//   textArea.innerHTML = 'Speak...';
-// });
+function initVoiceInput(buttonId, selectId) {
+  const button = document.getElementById(buttonId);
+  const select = document.getElementById(selectId);
 
-// recognition.onresult = function(e) {
-//   console.log(e);
-//   const result = e.results[0][0].transcript;
-//   textArea.innerHTML = result;
-// }
+  const recognition = new SpeechRecognition();
+  recognition.lang = 'uk-UA';
+  recognition.interimResults = false;
+  recognition.maxAlternatives = 1;
+
+  button.addEventListener('click', (e) => {
+    e.preventDefault(); // Щоб не оновлювалась сторінка
+    recognition.start();
+    button.innerText = 'Слухаю...';
+  });
+
+  recognition.addEventListener('result', (event) => {
+    const transcript = event.results[0][0].transcript.toLowerCase().trim();
+    button.innerText = 'Speak ' + selectId.toUpperCase();
+
+    // Перевірка на допустимі фрази
+    if (transcript.includes('я звичайна')) {
+      select.value = 'я звичайна';
+    } else if (transcript.includes('я не є звичайною')) {
+      select.value = 'я на є звичайною';
+    } else if (transcript.includes('це правда')) {
+      select.value = 'це правда';
+    } else {
+      alert('Фраза не розпізнана або недопустима. Спробуйте ще раз.');
+    }
+  });
+
+  recognition.addEventListener('error', (event) => {
+    alert('Помилка розпізнавання: ' + event.error);
+    button.innerText = 'Speak ' + selectId.toUpperCase();
+  });
+}
+
+// Ініціалізація для A, B, C
+initVoiceInput('speakA', 'a');
+initVoiceInput('speakB', 'b');
+initVoiceInput('speakC', 'c');
